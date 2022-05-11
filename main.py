@@ -4,7 +4,7 @@ from jungle.game import *
 
 FPS = 60
 
-# essai
+#essai
 #objet texte gagnant
 pygame.font.init()
 font= pygame.font.Font(pygame.font.get_default_font(),36)

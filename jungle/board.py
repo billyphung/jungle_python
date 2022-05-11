@@ -82,11 +82,29 @@ class Board:
 
     def get_valid_moves(self,piece):
         moves = []
-        moves.append((piece.row+1,piece.col))
-        moves.append((piece.row-1,piece.col))
-        moves.append((piece.row,piece.col+1))
-        moves.append((piece.row,piece.col-1))
+        
+        if piece.row+1 < ROWS:
+            moves.append((piece.row+1,piece.col))
+        if piece.row-1 >= 0:
+            moves.append((piece.row-1,piece.col))
+        if piece.col+1 < COLS:
+            moves.append((piece.row,piece.col+1))
+        if piece.col-1 >= 0:
+            moves.append((piece.row,piece.col-1))
+        
+        for case in moves:
+            if(self.board[case[0]][case[1]] != 0) and self.board[case[0]][case[1]].team == piece.team:
+                moves.remove(case)
 
+            
+        """if(self.board[piece.row+1][piece.col] != 0 and self.board[piece.row+1][piece.col].team == piece.team):
+        if(self.board[piece.row-1][piece.col] != 0 and self.board[piece.row-1][piece.col].team == piece.team):
+            moves.remove((piece.row-1, piece.col))
+        if(self.board[piece.row][piece.col+1] != 0 and self.board[piece.row][piece.col+1].team == piece.team):
+            moves.remove((piece.row, piece.col+1))
+        if(self.board[piece.row][piece.col-1] != 0 and self.board[piece.row][piece.col-1].team == piece.team):
+            moves.remove((piece.row, piece.col-1))"""
+            
         return moves
     
     def winner(self):
