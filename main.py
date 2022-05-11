@@ -21,7 +21,7 @@ def get_row_col_from_mouse(pos):
     return row,col
 
 
-
+# test
 #fonction principale
 def main():
     run = True
