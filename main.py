@@ -22,7 +22,7 @@ def get_row_col_from_mouse(pos):
 
 
 
-
+#fonction principale
 def main():
     run = True
     flag_endgame = False
