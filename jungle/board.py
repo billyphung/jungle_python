@@ -87,6 +87,21 @@ class Board:
         moves.append((piece.row,piece.col+1))
         moves.append((piece.row,piece.col-1))
 
+        if(piece.force!=1):
+
+            if( (piece.row+1,piece.col) in Rivieres ):
+                moves.remove((piece.row+1,piece.col))
+
+            if( (piece.row-1,piece.col) in Rivieres ):
+                moves.remove((piece.row-1,piece.col))
+
+            if( (piece.row,piece.col+1) in Rivieres ):
+                moves.remove((piece.row+1,piece.col))
+
+            if( (piece.row,piece.col-1) in Rivieres ):
+                moves.remove((piece.row+1,piece.col))
+            
+
         return moves
     
     def winner(self):
