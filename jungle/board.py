@@ -96,10 +96,10 @@ class Board:
                 moves.remove((piece.row-1,piece.col))
 
             if( (piece.row,piece.col+1) in Rivieres ):
-                moves.remove((piece.row+1,piece.col))
+                moves.remove((piece.row,piece.col+1))
 
             if( (piece.row,piece.col-1) in Rivieres ):
-                moves.remove((piece.row+1,piece.col))
+                moves.remove((piece.row,piece.col-1))
             
 
         return moves
